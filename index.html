@@ -23,13 +23,21 @@
       action="https://script.google.com/macros/s/AKfycbxe6-NSwqFbEEMAnfijBqNP5ip5ZpcJgjci615AoUQYt5Yvb4pa5Zww-hxOpDOq0A8Nmg/exec">
       <form>
         text:<input type="text" id="textid"><br>
-          password:<input type="password" id="password"><br>
+          password:<input type="password" id="passwordid"><br>
             <input type="submit">
           </form>
     </main>
+    <span class="loader HIDDEN"></span>
   <script>
     document.getElementById('formid').addEventListener('submit' ,e=>{e.preventDefault()
-    console.log('hello js')
+    
+      const text = document.getElementById('textid').value
+      const password =document.getElementById('passwordid').value
+      document.getElementsByClassName("loader")[0].classList.toggle("HIDDEN")
+
+      console.log(text, password)
+      
+      const res =await fetch(`https://script.google.com/macros/s/AKfycbxe6-NSwqFbEEMAnfijBqNP5ip5ZpcJgjci615AoUQYt5Yvb4pa5Zww-hxOpDOq0A8Nmg/exec)
   })
   </script></body>
   
