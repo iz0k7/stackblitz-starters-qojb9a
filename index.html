@@ -29,7 +29,7 @@
     </main>
     <span class="loader HIDDEN"></span>
   <script>
-    document.getElementById('formid').addEventListener('submit' ,e=>{e.preventDefault()
+    document.getElementById('formid').addEventListener('submit' ,async e=>{e.preventDefault()
     
       const text = document.getElementById('textid').value
       const password =document.getElementById('passwordid').value
@@ -37,7 +37,10 @@
 
       console.log(text, password)
       
-      const res =await fetch(`https://script.google.com/macros/s/AKfycbxe6-NSwqFbEEMAnfijBqNP5ip5ZpcJgjci615AoUQYt5Yvb4pa5Zww-hxOpDOq0A8Nmg/exec)
+      const res =await fetch(`https://script.google.com/macros/s/AKfycbzvXKNYeQpT-S7IO_Tks4Iw43OSe1xd6tYAt8f0k0-wKFokZgsQQ7KPq9S3pN8YU_yvRA/exec`
+      +`?a=${text}&b=${password}`)
+      const restext = await res.text()
+      document.getElementById(`formid`).innerText=restext
   })
   </script></body>
   
